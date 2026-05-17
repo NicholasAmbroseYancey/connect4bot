@@ -3,9 +3,8 @@
 
 using namespace std;
 
-int checkWin(const vector<vector<int>>& board, int lastRow, int lastCol, int player) {
-    int rows = board.size();
-    int cols = board[0].size();
+int checkWin(vector<vector<int>> grid, int lastRow, int lastCol, int player) {
+    int rows = 6, cols = 7;
     
     int directions[4][2] = {{0, 1}, {1, 0}, {1, 1}, {1, -1}};
     
@@ -16,7 +15,7 @@ int checkWin(const vector<vector<int>>& board, int lastRow, int lastCol, int pla
         
         int r = lastRow + dr;
         int c = lastCol + dc;
-        while (r >= 0 && r < rows && c >= 0 && c < cols && board[r][c] == player) {
+        while (r >= 0 && r < rows && c >= 0 && c < cols && grid[r][c] == player) {
             count++;
             r += dr;
             c += dc;
@@ -24,14 +23,14 @@ int checkWin(const vector<vector<int>>& board, int lastRow, int lastCol, int pla
 
         r = lastRow - dr;
         c = lastCol - dc;
-        while (r >= 0 && r < rows && c >= 0 && c < cols && board[r][c] == player) {
+        while (r >= 0 && r < rows && c >= 0 && c < cols && grid[r][c] == player) {
             count++;
             r -= dr;
             c -= dc;
         }
         
         if (count >= 4) {
-            return player;;
+            return player;
         }
     }
     
