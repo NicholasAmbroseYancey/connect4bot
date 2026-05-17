@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int checkWin(const std::vector<std::vector<int>>& board, int lastRow, int lastCol, int player) {
+int checkWin(const vector<vector<int>>& board, int lastRow, int lastCol, int player) {
     int rows = board.size();
     int cols = board[0].size();
     
